@@ -1,0 +1,68 @@
+.side-main
+{
+    width: 20%;
+    height: 100vh;
+    /* border: 5px solid red; */
+    -webkit-box-shadow: 4px 1px 10px -2px rgba(114,114,114,1);
+    -moz-box-shadow: 4px 1px 10px -2px rgba(114,114,114,1);
+    box-shadow: 4px 1px 10px -2px rgba(114,114,114,1);
+    z-index: 1;
+}
+
+.side-hero
+{
+    font-family: "Montserrat", serif;
+    font-weight: 700;
+    font-size: 24px;
+    text-align: center;
+    transform: translateX(-55px);
+    margin-top: 30px;
+    color: #007AFF; 
+    /* border: 1px solid black;  */
+}
+.side-hero-wrap{
+    display: flex;
+    border: 1px solid #CFCFCF;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 10px;
+}
+
+.nav-links{
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 40px;
+
+    margin-top: 50px;
+    gap: 20px;
+}
+
+.link{
+    display: flex;
+    gap: 9px;
+    align-items: flex-end;
+    justify-content: center;
+    transition: all 0.5s ease;
+
+}
+
+.link.active .link-name {
+    color: black !important;  /* Ensures only the text inside turns black */
+    font-weight: 700;
+}
+.link:hover{
+    color: black;
+    transform: translateY(-5px);
+}
+.link img{
+    width: 20px;
+    height: 20px;
+}
+.link-name{
+    font-family: "Montserrat", serif;
+    font-size: 14px;
+    font-weight: 600;
+
+}

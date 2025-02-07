@@ -1,0 +1,72 @@
+h1{
+    font-family: "Albert Sans", serif;
+    font-size: 48px;
+    font-weight: 500;
+}
+    
+
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    padding: 2px 0px 2px 20px;
+    /* padding-left: 20px; */
+    font-family: "Inter", serif;
+    font-family: "Inter", serif;
+}
+form input, button{
+    width: 80%;
+    border: 5px solid #E5E5E5;
+    height: 40px;
+    border-radius: 8px;
+    font-size: 14px; 
+    padding: 5px 10px;
+
+}
+
+button
+{
+    margin-top: 30px;
+    height: 50px;
+    font-size: 22px;
+    font-family:  "Albert Sans", serif;
+    border: none;
+    background-color: #4163C9;
+    color: white;
+    font-weight: 500;
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+
+button:hover
+{
+    background-color: #1439a8;
+
+}
+
+p{
+    font-size: 13px;
+    color: #9E9B9B;
+    margin-top: 10px;
+}
+.link{
+    color: #136ABB;
+}
+
+
+
+
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+  /* The typewriter cursor effect */
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange; }
+  }

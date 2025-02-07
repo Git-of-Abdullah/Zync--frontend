@@ -1,0 +1,27 @@
+.post-shimmer{
+    min-height: 100%;
+    width: 100%;
+    border-radius: 8px;
+    /* border: 1px solid black; */
+    background-color: #494848c5;
+    -webkit-animation: color-change-2x .5s linear infinite alternate both;
+	        animation: color-change-2x .5s linear infinite alternate both;
+}
+
+@-webkit-keyframes color-change-2x {
+    0% {
+      background: #494848c5;  /* Primary color */
+    }
+    100% {
+      background: #777777c5;  /* New color */
+    }
+  }
+  
+  @keyframes color-change-2x {
+    0% {
+      background: #494848c5;  /* Primary color */
+    }
+    100% {
+      background: #777777c5;  /* New color */
+    }
+  }

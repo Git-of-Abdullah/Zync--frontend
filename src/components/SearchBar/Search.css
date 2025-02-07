@@ -1,0 +1,39 @@
+.search
+{
+    height: 46%;
+    width: 45%;
+    background-color: #EFEFF0;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 15px;
+    overflow: hidden;
+    transform: translateX(150px);
+
+}
+
+.search-text{
+    color: #6B7280;
+    font-family: "Poppins", serif;
+    font-size: 13px;
+    height: 100px;
+    width: 50%;
+    border: none;
+    /* border: 1px solid red; */
+    position: relative;
+    padding-left: 2px;
+    
+
+}
+.search-text:focus
+{
+    outline: none;
+}
+
+.searchIcon{
+    width: 17px;
+    height: 17px;
+    cursor: pointer;
+    /* border: 1px solid red; */
+}

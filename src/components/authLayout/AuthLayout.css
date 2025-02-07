@@ -1,0 +1,87 @@
+.auth-main-section
+{
+    width: 100%;
+    height: 100vh;
+    border: 1px solid black;
+    margin: auto;
+    background-color: #024BB9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.hero-div
+{
+    width: 85%;
+    height: 95%;
+    background-color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.logo{
+
+    width: 50%;
+    /* border: 1px solid red; */
+    height: 100%;
+    background: rgb(0,49,198);
+    background: linear-gradient(180deg, rgba(0,49,198,0.7880091292134832) 30%, rgba(67,255,180,1) 100%);
+    overflow: hidden;
+}
+
+.circle1, .circle2{
+    width: 120px;
+    height: 120px;
+   /* border: 2px solid black;*/
+    border-radius: 50%;
+}
+
+.circle2{
+    position: relative;
+    /* border: 2px solid red; */
+    transform: translate(-50px,-119px);
+    background-color: #3fe9ff93;
+}
+
+.circle1{
+    position: relative;
+    transform: translate(0px, -50px);
+    background-color: #3fe9ff93;
+}
+
+
+.logo-main
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    /* border: 1px solid black; */
+    position: relative;
+    transform: translateY(-40%);
+}
+
+.logo-main img{
+
+    width: 35%;
+    height: 30%;
+}
+.logo-main h1{
+
+   font-family: "Lexend Zetta", serif;
+   font-size: 32px;
+   color: white;
+   font-weight: 400;
+}
+
+.logInfo
+{
+    padding: 50px;
+    /* border: 1px solid red; */
+    width: 40%;
+    margin-right: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}

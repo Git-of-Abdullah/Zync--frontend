@@ -1,0 +1,36 @@
+.friend-main{
+    width: 100%;
+    height: 58%;
+    /* border: 1px solid black; */
+    border-radius: 8px;
+    background-color: #FFFFFF;
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(86,86,86,0.5);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(86,86,86,0.5);
+    box-shadow: 0px 0px 10px 0px rgba(86,86,86,0.5); 
+    display: flex;
+    flex-direction: column;
+ 
+}
+
+.friend-main h1{
+    font-family: "Montserrat", serif;
+    font-weight: 600;
+    font-size: 18px;
+    color: #333232;
+
+    border-bottom: 1px solid #D2D1D1;
+    padding: 13px 10px;
+}
+.Friend-activites{
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 8px;
+    padding: 10px 0px;
+    height: 76%;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    scrollbar-gutter: stable;
+    /* border: 1px solid red; */
+}

@@ -1,0 +1,15 @@
+#root {
+  width: 100%;
+}
+*::-webkit-scrollbar {
+  width: 8px; /* Adjust width as needed */
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.3); /* Scrollbar color */
+  border-radius: 4px;
+}
+
+*::-webkit-scrollbar-track {
+  background-color: #f0f0f0; /* Track background */
+}

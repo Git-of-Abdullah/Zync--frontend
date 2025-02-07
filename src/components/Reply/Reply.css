@@ -1,0 +1,19 @@
+.reply-one{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 10px;
+
+    /* border: 1px solid red; */
+    padding: 0;
+}
+.repl-name{
+    font-size: 12px;
+}
+.repl-content{
+    font-size: 13px;
+}
+.reply-one .repl-image{
+    width: 25px;
+    height: 25px;
+}

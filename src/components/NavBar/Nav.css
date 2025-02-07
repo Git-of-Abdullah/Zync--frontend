@@ -1,0 +1,34 @@
+.nav-main
+{
+    width: 85%;
+    height: 80px;
+    background-color: #FFFFFF;
+    /* border: 5px solid black; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 30px;
+
+
+
+}
+
+.username{
+    font-size: 15px;
+    font-family: "Poppins", serif;
+    font-weight: 400;
+    color: #0F0F0F;
+}
+
+.userImg{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+
+.user-section
+{
+    display: flex;
+    gap: 10px;
+}
+
