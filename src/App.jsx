@@ -7,6 +7,8 @@ import { ForgotPassword } from './components/ForgotPassword/ForgotPassword'
 import { ResetPassword } from './components/ResetPassword/ResetPassword'
 import { HomeLayout } from './components/HomeLayout/HomeLayout'
 import { Feed } from './components/Feed/Feed'
+import { Create } from './components/Create/Create'
+import { Profile } from './components/Profile/Profile'
 
 function App() {
   
@@ -24,7 +26,13 @@ function App() {
       <Route path='/home' element={<HomeLayout/>}>
         <Route index element= {<Feed/>}></Route>
       </Route>
-
+      {/*Create Page*/}
+      <Route path='/create' element={<HomeLayout/>}>
+        <Route index element= {<Create/>}></Route>
+      </Route>
+      <Route path='/profile' element={<Profile/>}>
+      </Route>
+ 
     </Routes>
     </>
   )

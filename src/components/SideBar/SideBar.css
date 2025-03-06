@@ -1,6 +1,6 @@
 .side-main
 {
-    width: 20%;
+    width: 17%;
     height: 100vh;
     /* border: 5px solid red; */
     -webkit-box-shadow: 4px 1px 10px -2px rgba(114,114,114,1);
@@ -54,7 +54,7 @@
 }
 .link:hover{
     color: black;
-    transform: translateY(-5px);
+    transform: translateY(-1px);
 }
 .link img{
     width: 20px;

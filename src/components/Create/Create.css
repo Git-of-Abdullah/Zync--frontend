@@ -1,0 +1,124 @@
+.create-main{
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #0076f51c;
+    }
+.create-head{
+    font-size: 30px;
+    font-weight: 700;
+    font-family: "Montserrat";
+    
+    color: rgba(0, 0, 0, 0.733);
+}
+
+
+
+.create-sub{
+    /* border: 1px solid red; */
+    padding: 30px 25px;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    -webkit-box-shadow: -9px 10px 5px 0px rgba(0,0,0,0.25);
+-moz-box-shadow: -9px 10px 5px 0px rgba(0,0,0,0.25);
+box-shadow: -9px 10px 5px 0px rgba(0,0,0,0.25)
+}
+.create-sub .pfp-caption{
+     display: flex;
+     gap: 15px;
+}
+.create-pfp{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+.create-caption{
+    background-color: #F6F7F9;
+    border-radius: 10px;
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: "Roboto", sans-serif;
+    width: 90%;
+    /* border: 1px solid black; */
+    padding: 7px 14px;
+    color: rgb(43, 41, 41);
+
+}
+
+.upload-actions{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 40px;
+    margin-top: 10px;
+    /* border: 1px solid red; */
+    padding: 0;
+}
+.upload-actions input{
+    display: none;
+}
+.upload-action-att
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    cursor: pointer;
+    /* border: 1px solid black; */
+    height: 35px;
+    width: 25%;
+    padding: 5px;
+    
+    
+}
+
+.upload-action-att img{
+    width: 15px;
+    /* border: 1px solid red; */
+    padding: 0;
+    transform: translateY(4px);
+}
+.upload-action-att p{
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+}
+.create-upload{
+    width: 25%;
+    height: 35px;
+    font-size: 13px;
+    background-color: #75B7FF;
+    transform: translateY(-12px);
+    border-radius: 8px;
+}
+
+.previews{
+    display: flex;
+    gap: 10px;
+    transform: translateX(10px);
+}
+
+.create-location{
+    width: 50%;
+    margin: auto;
+    transform: translateX(-25%);
+    margin-top: 10px;
+    font-size: 13px;
+    background-color: #a9d3ff3b;
+    height: 35px;
+    border-radius: 8px;
+    padding: 10px;
+    color: black;
+    outline: none;
+}
+
+

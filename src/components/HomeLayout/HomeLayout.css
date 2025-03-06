@@ -2,13 +2,13 @@
     display: flex;
 }
 .main-center{
-    width: calc(80%  + 7px);
+    width: calc(80%  + 40px);
     height: calc(100vh - 78px);
     /* border: 1px solid red; */
     position: fixed;
     top: 78px;
     left: 20%;
-    transform: translateX(-10px);
+    transform: translateX(-43px);
     background-color: #D7D7D8;
     display: flex;
     align-items: center;
@@ -22,10 +22,19 @@
     /* border: 1px solid red; */
     transform: translateX(27%);
     overflow-y: auto;
+    scrollbar-width: none;
     display: flex;
     flex-direction: column;
     gap: 80px;
 }
+.main1::-webkit-scrollbar {
+    width: 0; /* Remove scrollbar width */
+    background: transparent; /* Make scrollbar track transparent */
+  }
+  
+  .main1::-webkit-scrollbar-thumb {
+    background: transparent; /* Make scrollbar thumb transparent */
+  }
 .main2{
     width: 25%;
     height: 98%;
