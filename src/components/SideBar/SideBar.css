@@ -1,6 +1,6 @@
 .side-main
 {
-    width: 17%;
+    width: 19%;
     height: 100vh;
     /* border: 5px solid red; */
     -webkit-box-shadow: 4px 1px 10px -2px rgba(114,114,114,1);
@@ -62,7 +62,7 @@
 }
 .link-name{
     font-family: "Montserrat", serif;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 600;
 
 }

@@ -83,9 +83,13 @@ export const Post = ({data, openComments}) => {
             </div>
         </div>
         <p className="caption">
+            
             {data.content}
         </p>
-        <img className="post-img" src={data.media[0]} alt="" />  
+        <div className="post-img">
+        <img  src={data.media[0]} alt="" />
+        </div>
+          
         <div className="likes-comments">
             <p>{likeCount} likes</p><p>{commentCount} comments</p>
         </div>
