@@ -9,6 +9,7 @@ import Picker from "emoji-picker-react"
 import PostIt from "../../assets/icons/postIt.svg" 
 import axios from "axios"
 import {jwtDecode} from "jwt-decode"
+import ImageSlider from "../ImageSlider/ImageSlider"
 
 
 export const Post = ({data, openComments}) => {
@@ -87,7 +88,7 @@ export const Post = ({data, openComments}) => {
             {data.content}
         </p>
         <div className="post-img">
-        <img  src={data.media[0]} alt="" />
+        <ImageSlider/>
         </div>
           
         <div className="likes-comments">
