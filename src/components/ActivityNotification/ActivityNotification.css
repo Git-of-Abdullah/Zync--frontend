@@ -28,3 +28,11 @@
     height: 25px;
     cursor: pointer;
 }
+
+.notification.dark{
+    background-color: #434242;
+}
+
+.notification.dark p{
+ color: #F8F8F8;
+}

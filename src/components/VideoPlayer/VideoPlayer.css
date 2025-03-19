@@ -8,6 +8,12 @@
     background: black;
     overflow: hidden;
   }
+
+  .video-container.dark{
+    background-color: rgb(44, 44, 44);
+  }
+
+ 
   
   .video-element {
     width: 100%;

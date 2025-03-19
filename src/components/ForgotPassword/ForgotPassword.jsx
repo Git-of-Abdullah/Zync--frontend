@@ -30,15 +30,15 @@ export const ForgotPassword = () => {
         }
       
 
-
+        
     }
 
   return (
     <>
-    <h1 className="forgot">Forgot Password</h1>
+    <h1 className="login-head forgot">Forgot Password</h1>
     <form onSubmit={handleSubmit}>
     
-    <input type="email" placeholder="Email" required value={email} onChange={(e) => setEmail(e.target.value)} />
+    <input className="login-input" type="email" placeholder="Email" required value={email} onChange={(e) => setEmail(e.target.value)} />
     <button type="submit" > Get Mail </button>
     {error && <p className="error">{error}</p> || message &&  <p className="message">{message}</p>}
      

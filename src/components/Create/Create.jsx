@@ -1,7 +1,8 @@
-import {  useRef, useState } from "react"
+import {  useContext, useRef, useState } from "react"
 import "../Create/Create.css"
 import camera from "../../assets/icons/camera.svg"
 import axios from "axios"
+import { ThemeContext } from "../ThemeContext/ThemeContext"
 
 
 export const Create = () => {
@@ -11,7 +12,7 @@ export const Create = () => {
     const [location, setLocation] = useState("");
     const [files,setFiles] = useState([]);
     const [previews,setPreviews] = useState([]);
-    
+    const {theme} = useContext(ThemeContext)
     
 
 
@@ -89,7 +90,7 @@ export const Create = () => {
       
 
   return (
-    <div className="create-main">
+    <div className={`create-main ${theme === 'dark' ? "dark" : " "}`}>
     <h1 className="create-head"> Create a post </h1>
     <div className="create-sub">
         <div className="pfp-caption">

@@ -40,11 +40,11 @@ export const Login = () => {
 
   return (
     <>
-    <h1>Log In</h1>
+    <h1 className="login-head" >Log In</h1>
     <form onSubmit={handleSubmit}>
     
-    <input type="email" placeholder="Email" required value={email} onChange={(e) => setEmail(e.target.value)} />
-    <input type="password" placeholder="Password" minLength="8" required value={password} onChange={(e) => setPassword(e.target.value)}/>
+    <input className="login-input" type="email" placeholder="Email" required value={email} onChange={(e) => setEmail(e.target.value)} />
+    <input className="login-input" type="password" placeholder="Password" minLength="8" required value={password} onChange={(e) => setPassword(e.target.value)}/>
     <button type="submit" > Log in</button>
     {error && <p className="error">{error}</p>}
      <Link className="link" to="/auth/forgotPassword">Forgot Password</Link> 

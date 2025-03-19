@@ -79,3 +79,56 @@
     transform: translateY(-1px);
     cursor: pointer;
 }
+
+
+
+
+
+/* Dark mode for individual comment */
+.comment-single.dark {
+    color: white;
+}
+
+/* Dark mode for name and content */
+.comment-single.dark .name-content {
+    color: #bdbdbd; /* Light gray for better readability */
+}
+
+/* Dark mode for comment text */
+.comment-single.dark .content {
+    color: white;
+}
+
+/* Dark mode for reply text */
+.comment-single.dark .reply {
+    color: #b0b0b0;
+}
+
+.comment-single.dark .reply:hover {
+    color: #e0e0e0;
+}
+
+/* Dark mode for replies section */
+.comment-single.dark .replies-section {
+    border-left: 1px solid #555;
+}
+
+/* Dark mode for reply input container */
+.comment-single.dark .add-reply {
+    border-top: 1px solid #555;
+    border-bottom: 1px solid #555;
+    border-left: 1px solid #555;
+    background-color: #2d2d2d; /* Dark background */
+}
+
+/* Dark mode for reply input */
+.comment-single.dark .add-reply input {
+    background-color: #383838; /* Dark input field */
+    color: white; /* White text */
+    border: none;
+}
+
+/* Dark mode for reply icon */
+.comment-single.dark .add-reply img {
+    filter: brightness(0) invert(1); /* Makes the image white */
+}

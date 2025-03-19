@@ -1,11 +1,13 @@
 import "./ActivityNotification.css";
 import followIcon from "../../assets/icons/follow-icon.svg";
 import likeIcon from "../../assets/icons/heart-filled.svg";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { ThemeContext } from "../ThemeContext/ThemeContext";
 
 export const ActivityNotification = ({ sender, content }) => {
    const [like, setLike] = useState(false);
    const [follow, setFollow] = useState(false);
+   const {theme} = useContext(ThemeContext)
 
    useEffect(() => {
       // Run effect only when content changes
@@ -19,7 +21,7 @@ export const ActivityNotification = ({ sender, content }) => {
    }, [content]); // Dependency array ensures effect only runs when `content` changes
 
    return (
-      <div className="notification">
+      <div className={`notification ${theme === "dark" ? "dark" : " "}`}>
          <img src={sender.profilePic} alt="" />
          <p>
             <b>{sender.name}</b> {content}

@@ -9,6 +9,10 @@
     z-index: 1;
 }
 
+.side-main.dark{
+    background-color: black;
+}
+
 .side-hero
 {
     font-family: "Montserrat", serif;
@@ -49,7 +53,7 @@
 }
 
 .link.active .link-name {
-    color: black !important;  /* Ensures only the text inside turns black */
+    color: black !important;
     font-weight: 700;
 }
 .link:hover{
@@ -65,4 +69,61 @@
     font-size: 16px;
     font-weight: 600;
 
+}
+
+.themebutton{
+    display: flex;
+    gap: 9px;
+    align-items: flex-end;
+    justify-content: center;
+    transition: all 0.5s ease;
+}
+
+
+.side-main {
+    width: 19%;
+    height: 100vh;
+    -webkit-box-shadow: 4px 1px 10px -2px rgba(114,114,114,1);
+    -moz-box-shadow: 4px 1px 10px -2px rgba(114,114,114,1);
+    box-shadow: 4px 1px 10px -2px rgba(114,114,114,1);
+    z-index: 1;
+}
+
+/* Apply dark mode styles */
+.side-main.dark {
+    background-color: #000000;
+    color: white; /* Change text color */
+}
+
+/* Change link colors in dark mode */
+.side-main.dark .nav-links a {
+    color: white;
+}
+
+.side-main.dark .link.active .link-name {
+    color: rgb(255, 255, 255) !important ;/* Example for active link */
+}
+
+/* Change the sidebar title color */
+.side-main.dark .side-hero {
+    color: white;
+}
+
+/* Change icons if needed */
+.side-main.dark .nav-links img {
+    filter: invert(1); /* Inverts colors for dark mode */
+}
+
+
+.side-main.dark .side-hero{
+    color: #007AFF;
+    padding-bottom: 4px;
+}
+
+
+.side-main.dark .side-hero-wrap{
+    border: none;
+    border-bottom: 1px solid #4E4E4E;
+    background-color: #010101;
+    /* border: 2px solid white; */
 }

@@ -1,14 +1,16 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useContext } from "react"
 import { User } from "../User/User"
 import "./FriendList.css"
 import { jwtDecode } from "jwt-decode"
 import axios from "axios"
+import { ThemeContext } from "../ThemeContext/ThemeContext"
 
 
 export const FriendList = () => {
   const[data,setData] = useState([]);
   const[loading, setLoading] = useState(true)
   const token = localStorage.getItem("token")
+  const {theme} = useContext(ThemeContext)
   const id = jwtDecode(token).id
 
   useEffect(()=>
@@ -35,8 +37,11 @@ export const FriendList = () => {
       
     }; getFollowers();
   },[token,id])
+
+
+
   return (
-    <div className="friend-main">
+    <div className={`friend-main ${theme === "dark"? "dark" : " "}`}>
         <h1> Followers </h1>
         {/* Map function add here */}
         <div className="Friend-activites">

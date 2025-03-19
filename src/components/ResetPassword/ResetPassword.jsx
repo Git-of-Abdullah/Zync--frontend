@@ -40,11 +40,11 @@ export const ResetPassword = () => {
 
   return (
     <>
-    <h1>Reset Password</h1>
+    <h1 className="login-head" >Reset Password</h1>
     <form onSubmit={handleSubmit}>
     
-    <input type="password" placeholder="Password" minLength="8" required value={password} onChange={(e) => setPassword(e.target.value)}/>
-    <input type="password" placeholder="Confirm Password" minLength="8" required value={confPassword} onChange={(e) =>setConfPassword(e.target.value)} />
+    <input className="login-input" type="password" placeholder="Password" minLength="8" required value={password} onChange={(e) => setPassword(e.target.value)}/>
+    <input className="login-input" type="password" placeholder="Confirm Password" minLength="8" required value={confPassword} onChange={(e) =>setConfPassword(e.target.value)} />
     <button type="submit" > Reset Password</button>
     {error && <p className="error">{error}</p>}
     </form>

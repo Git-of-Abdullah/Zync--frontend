@@ -3,13 +3,14 @@ import tempImg from "../../../public/WhatsApp Image 2025-01-31 at 16.55.13_6040e
 import like from "../../assets/icons/heart.svg"
 import liked from "../../assets/icons/heart-filled.svg"
 import commentIcon from "../../assets/icons/comment.svg"
-import { useState, } from "react"
+import { useContext, useState, } from "react"
 import emojiIcon from "../../assets/icons/smile.svg"
 import Picker from "emoji-picker-react"
 import PostIt from "../../assets/icons/postIt.svg" 
 import axios from "axios"
 import {jwtDecode} from "jwt-decode"
 import ImageSlider from "../ImageSlider/ImageSlider"
+import { ThemeContext } from "../ThemeContext/ThemeContext"
 
 
 export const Post = ({data, openComments}) => {
@@ -22,7 +23,10 @@ export const Post = ({data, openComments}) => {
     const [showPicker, setShowPicker] = useState(false)
     const [likeCount, setLikeCount] = useState(data.likes.length);
     const [isLiked, setIsLiked] = useState(data.likes.includes(id))
-   
+    
+
+    //theme
+    const {theme} = useContext(ThemeContext)
 
 
   
@@ -75,7 +79,7 @@ export const Post = ({data, openComments}) => {
       };
   return (
     <>
-    <div className="post-main">
+    <div className={`post-main ${theme === 'dark' ? "dark" : " "}`}>
         <div className="user-section">
             <img src="https://res.cloudinary.com/dxdsrmlcd/image/upload/v1738067039/default_profile_uj539l.png" alt="" className="user-pfp" />
             <div className="name-location">
@@ -96,11 +100,11 @@ export const Post = ({data, openComments}) => {
         </div>
         <div className="post-actions">
                 <div className="att">
-                    <img src={isLiked ? liked : like} alt="" onClick={handleLike} />
+                    <img className={isLiked ? "liked-icon" : "unliked-icon"} src={isLiked ? liked : like} alt="" onClick={handleLike} />
                     <p>Like</p>
                 </div>
                 <div className="att">
-                    <img src={commentIcon} alt="" onClick={openComments} />
+                    <img className="unliked-icon" src={commentIcon} alt="" onClick={openComments} />
                     <p>comments</p>
                 </div>
         </div>

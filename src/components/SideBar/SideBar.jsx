@@ -7,11 +7,17 @@ import mode from "../../assets/icons/Mode icon.svg"
 import fav from '../../assets/icons/Save.svg'
 import create from "../../assets/icons/create.svg"
 import setting from "../../assets/icons/settings.svg"
+import { useContext } from "react"
+import { ThemeContext } from "../ThemeContext/ThemeContext"
 
 
 export const SideBar = () => {
+
+    const{ toggleTheme } = useContext(ThemeContext)
+
+    const {theme} = useContext(ThemeContext)
   return (
-    <div className="side-main">
+    <div className={`side-main ${theme === "dark" ? "dark" : ""}`}>
         <div className="side-hero-wrap">
         <h1 className="side-hero"> ZYNC </h1>
         </div>
@@ -33,8 +39,8 @@ export const SideBar = () => {
                 <p className="link-name">Message</p>
             </NavLink>
 
-            <NavLink to="/mode" className={({ isActive }) => isActive ? "link active" : "link"}> 
-                <img src={mode} alt="" />
+            <NavLink to="#" onClick={toggleTheme} className="themebutton">
+                 <img src={mode} alt="" />
                 <p className="link-name">Mode</p>
             </NavLink>
 

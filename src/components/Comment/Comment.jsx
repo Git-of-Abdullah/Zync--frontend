@@ -1,10 +1,12 @@
 import "./Comment.css"
-import { useState } from "react"
+import { useContext, useState } from "react"
 import axios from "axios"
 import { Reply } from "../Reply/Reply"
 import send from "../../assets/icons/postIt.svg"
+import { ThemeContext } from "../ThemeContext/ThemeContext"
 
 export const Comment = ({data}) => {
+    const {theme} = useContext(ThemeContext)
     const token = localStorage.getItem("token")
     const [showReplies, setShowReplies] = useState(false)
     const [replies, setReplies] = useState([])
@@ -53,7 +55,7 @@ export const Comment = ({data}) => {
         }
 
   return (
-    <div className="comment-single">
+    <div className={`comment-single ${theme === "dark" ? "dark" : " "}`}>
         <img src={data.user.profilePic} alt="" />
         <div className="name-content">
             <div className="Username">{data.user.name}</div>

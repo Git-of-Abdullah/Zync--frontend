@@ -75,3 +75,9 @@
         display: none !important;
     }
 }
+
+
+
+.image-wrapper.dark{
+    background-color: rgb(44, 44, 44);
+}

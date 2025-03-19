@@ -50,12 +50,12 @@ export const SignUp = () => {
 
   return (
     <>
-    <h1>Sign Up</h1>
+    <h1 className="login-head">Sign Up</h1>
     <form onSubmit={handleSubmit}>
-    <input type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)}required  />
-    <input type="email" placeholder="Email" required value={email} onChange={(e) => setEmail(e.target.value)} />
-    <input type="password" placeholder="Password" minLength="8" required value={password} onChange={(e) => setPassword(e.target.value)}/>
-    <input type="password" placeholder="Confirm Password" minLength="8" required value={confPassword} onChange={(e) =>setConfPassword(e.target.value)} />
+    <input className="login-input" type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)}required  />
+    <input className="login-input" type="email" placeholder="Email" required value={email} onChange={(e) => setEmail(e.target.value)} />
+    <input className="login-input" type="password" placeholder="Password" minLength="8" required value={password} onChange={(e) => setPassword(e.target.value)}/>
+    <input className="login-input" type="password" placeholder="Confirm Password" minLength="8" required value={confPassword} onChange={(e) =>setConfPassword(e.target.value)} />
 
     <button type="submit" > Sign up</button>
     {error && <p className="error">{error}</p>}

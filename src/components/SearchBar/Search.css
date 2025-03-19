@@ -13,6 +13,13 @@
 
 }
 
+.search.dark{
+    background-color: #4E4E4E;
+}
+
+.search.dark .search-text{
+    color: #E3E3E3;
+}
 .search-text{
     color: #6B7280;
     font-family: "Poppins", serif;
@@ -25,6 +32,9 @@
     padding-left: 2px;
     
 
+}
+.search.dark .search-text{
+    color: #E3E3E3;
 }
 .search-text:focus
 {

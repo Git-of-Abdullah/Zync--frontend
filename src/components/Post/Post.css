@@ -16,6 +16,14 @@
     box-shadow: 0px 4px 7px 0px rgba(54,54,54,1);
 
 }
+
+.post-main.dark{
+    background-color: #000000;
+    box-shadow: 0px 3px 8px 0px #1C1C1C33;
+
+}
+
+
 .user-pfp
 {
     width: 40px;
@@ -63,7 +71,7 @@
   padding: 7px 0px;
   font-weight: 400;
   line-height: 17px;
-  font-size: 17px;
+  font-size: 15px;
 }
 .post-img {
     width: 100%;
@@ -176,6 +184,7 @@
     position: absolute;
     /* border: 1px solid red; */
     transform: translate(-5%, -50%);
+    z-index: 9999;
 }
 .PostIcon{
     cursor: pointer;
@@ -210,3 +219,69 @@
     }
   }
   
+
+
+
+
+ /* Dark Mode Styles */
+.post-main.dark {
+    background-color: #000000;
+    box-shadow: 0px 3px 8px 0px #1C1C1C33;
+}
+
+/* Change text color for dark mode */
+.post-main.dark .name-location .name,
+.post-main.dark .caption,
+.post-main.dark .likes-comments p,
+.post-main.dark .att p {
+    color: #FFFFFF;
+}
+
+/* Change the input background and text color */
+.post-main.dark .comment-temp {
+    background-color: #2A2A2A;
+}
+
+.post-main.dark .comment-text {
+    background-color: #2A2A2A;
+    color: white;
+}
+
+/* Change icons background */
+.post-main.dark .post-icon-temp {
+    background-color: #444;
+}
+
+.post-main.dark .post-icon-temp:hover {
+    background-color: #666;
+}
+
+/* Change border colors for dark mode */
+.post-main.dark .likes-comments,
+.post-main.dark .post-actions {
+    border-bottom: 1px solid #5A5A5A;
+} 
+.post-main.dark .post-img{
+    background-color: #3E3E3E;
+}
+
+
+
+.post-main.dark .unliked-icon {
+    filter: invert(1);
+}
+
+/* Liked heart should remain red (no filter applied) */
+.liked-icon {
+    filter: none;
+}
+
+
+
+
+.post-main.dark .post-icon-temp img {
+
+        filter: brightness(0) invert(1);
+      
+      
+} 

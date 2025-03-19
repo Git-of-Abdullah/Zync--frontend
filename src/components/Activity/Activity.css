@@ -61,3 +61,14 @@
       background-color: #bebabab0;  /* New color */
     }
   }
+
+
+
+  .activity-main.dark{
+    background-color: #000000;
+  }
+
+  .activity-main.dark h1{
+    color: white;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.459);
+  }

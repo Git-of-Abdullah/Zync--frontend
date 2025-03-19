@@ -1,7 +1,8 @@
-h1{
+.login-head{
     font-family: "Albert Sans", serif;
     font-size: 48px;
     font-weight: 500;
+    color: black;
 }
     
 
@@ -17,13 +18,14 @@ form {
     font-family: "Inter", serif;
     font-family: "Inter", serif;
 }
-form input, button{
+form .login-input, button{
     width: 80%;
-    border: 5px solid #E5E5E5;
+    border: 5px solid #E5E5E5; 
     height: 40px;
     border-radius: 8px;
     font-size: 14px; 
     padding: 5px 10px;
+    color: black;
 
 }
 

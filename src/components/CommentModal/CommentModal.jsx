@@ -2,12 +2,13 @@ import "./CommentModal.css"
 import ReactDOM from "react-dom";
 import cross from "../../assets/icons/cross.svg"
 import { Comment } from "../Comment/Comment";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import emojiIcon from "../../assets/icons/smile.svg"
 import Picker from "emoji-picker-react"
 import PostIt from "../../assets/icons/postIt.svg" 
 import axios from "axios"
 import {jwtDecode} from "jwt-decode"
+import { ThemeContext } from "../ThemeContext/ThemeContext";
 
 
 export const CommentModal = ({post, onClose}) => {
@@ -15,6 +16,7 @@ export const CommentModal = ({post, onClose}) => {
     const [data, setData] = useState([])
     const [comment, setComment] = useState("");
     const [showPicker, setShowPicker] = useState(false)
+    const {theme} = useContext(ThemeContext)
     
     //function to handle comment show and click
     //fetching comments data
@@ -78,7 +80,7 @@ const handleEmojiClick = (emojiData) => {
     return ReactDOM.createPortal(
         
         <div className="main-comment-modal" onClick={onClose}>
-          <div className="comment-box" onClick={(e) => {e.stopPropagation()}}>
+          <div className={`comment-box ${theme === 'dark' ? "dark" : " "}`} onClick={(e) => {e.stopPropagation()}}>
             <div className="comment-head">
                 <h1>Comments</h1> <img src={cross} alt="" onClick={onClose} />
             </div>

@@ -1,11 +1,13 @@
-import React, { useRef, useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 import { FaPlay, FaPause, FaVolumeMute, FaVolumeUp } from "react-icons/fa";
 import "./VideoPlayer.css"; // Import styles
+import { ThemeContext } from "../ThemeContext/ThemeContext";
 
 const VideoPlayer = ({ src }) => {
   const videoRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(true);
+  const {theme} = useContext(ThemeContext);
 
   // Toggle Play/Pause
   const togglePlay = () => {
@@ -25,7 +27,7 @@ const VideoPlayer = ({ src }) => {
   };
 
   return (
-    <div className="video-container">
+    <div className={`video-container ${theme === 'dark' ? "dark" : " "}`}>
       <video
         ref={videoRef}
         src={src}

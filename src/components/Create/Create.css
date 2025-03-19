@@ -121,4 +121,47 @@ box-shadow: -9px 10px 5px 0px rgba(0,0,0,0.25)
     outline: none;
 }
 
+.create-main.dark {
+    background-color: #062546b2;
+}
 
+/* Change heading color */
+.create-main.dark .create-head {
+    color: white;
+}
+
+/* Dark mode for input fields */
+.create-main.dark .create-caption,
+.create-main.dark .create-location {
+    background-color: #383838;
+    color: white;
+}
+
+/* Ensure the placeholder text is visible in dark mode */
+.create-main.dark .create-caption::placeholder,
+.create-main.dark .create-location::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Apply dark mode to the post container */
+.create-main.dark .create-sub {
+    background-color: #2d2d2d;
+    color: white;
+}
+
+/* Keep button styles unchanged */
+.create-main.dark .create-upload {
+    background-color: #0a3f77;
+}
+.create-main.dark .create-upload:hover {
+    background-color: #062444;
+}
+
+/* Dark mode for upload actions */
+.create-main.dark .upload-action-att p {
+    color: white;
+}
+
+.create-main.dark .upload-action-att img {
+    filter: brightness(0) invert(1); /* Make icons white */
+}

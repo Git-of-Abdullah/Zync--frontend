@@ -9,12 +9,14 @@ import { HomeLayout } from './components/HomeLayout/HomeLayout'
 import { Feed } from './components/Feed/Feed'
 import { Create } from './components/Create/Create'
 import { Profile } from './components/Profile/Profile'
+import { ThemeContext } from './components/ThemeContext/ThemeContext'
 
 function App() {
   
 
   return (
     <>
+
        <Routes>
       <Route path='/auth' element= {<AuthLayout/>}>
             <Route index element= {<SignUp/>}></Route>

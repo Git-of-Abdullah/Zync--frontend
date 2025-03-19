@@ -15,6 +15,12 @@
     justify-content: space-between;
     
 }
+.main-center.dark{
+    background-color: #383838;
+}
+
+
+
 .main1{
     width: 80%;
     padding: 80px;

@@ -1,10 +1,14 @@
+import { useContext } from "react"
 import { Search } from "../SearchBar/Search"
 import "./Nav.css"
+import { ThemeContext } from "../ThemeContext/ThemeContext"
 
 
 export const Nav = () => {
+
+  const {theme} = useContext(ThemeContext)
   return (
-    <div className="nav-main">
+    <div className={`nav-main ${theme === "dark" ? "dark" : " "}`}>
         <Search />
         <div className="user-section">
             <p className="username">Kat_Ab</p>

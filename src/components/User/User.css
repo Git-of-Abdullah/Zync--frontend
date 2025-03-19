@@ -23,3 +23,7 @@
     /* border: 1px solid red; */
     transform: translateY(-4px);
 }
+
+.user.dark p{
+    color: #F8F8F8;
+}

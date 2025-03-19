@@ -2,11 +2,14 @@ import { useEffect, useState } from "react"
 import { ActivityNotification } from "../ActivityNotification/ActivityNotification"
 import "./Activity.css"
 import axios from "axios";
+import { useContext } from "react";
+import { ThemeContext } from "../ThemeContext/ThemeContext";
 
 
 export const Activity = () => {
    const [data, setData] = useState([]);
    const [loading, setLoading] = useState(true)
+   const {theme} = useContext(ThemeContext)
 
    const token = localStorage.getItem("token")
 
@@ -37,7 +40,7 @@ export const Activity = () => {
 
 
   return (
-    <div className="activity-main">
+    <div className={`activity-main ${theme === "dark" ? "dark" : ''}`}>
         <h1> Activity </h1>
         {/* Map function add here */}
         <div className="activites">

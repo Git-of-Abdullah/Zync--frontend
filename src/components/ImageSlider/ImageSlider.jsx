@@ -1,10 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
 import VideoPlayer from "../VideoPlayer/VideoPlayer";
 import "./ImageSlider.css";
+import 'ldrs/ring'
+import { squircle } from 'ldrs'
+import { ThemeContext } from "../ThemeContext/ThemeContext";
 
 const mediaUrls = [
   "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0", // Image 1
@@ -15,6 +18,7 @@ const mediaUrls = [
 ];
 
 const ImageSlider = () => {
+  const {theme} = useContext(ThemeContext)
   const [currentSlide, setCurrentSlide] = useState(1);
   const [mediaTypes, setMediaTypes] = useState({}); // Stores whether a URL is an image
   const totalSlides = mediaUrls.length;
@@ -42,6 +46,9 @@ const ImageSlider = () => {
     fetchMediaTypes();
   }, []);
 
+  
+squircle.register()
+
   return (
     <div className="slider-container">
       <Swiper
@@ -53,9 +60,16 @@ const ImageSlider = () => {
       >
         {mediaUrls.map((url, index) => (
           <SwiperSlide key={index}>
-            <div className="image-wrapper">
+            <div className={`image-wrapper ${theme === 'dark' ? "dark" : " "}`}>
               {mediaTypes[url] === undefined ? (
-                <p>Loading...</p> // Show loading while fetching
+                <l-squircle
+                size="37"
+                stroke="5"
+                stroke-length="0.15"
+                bg-opacity="0.1"
+                speed="0.9" 
+                color="black" 
+              ></l-squircle>// Show loading while fetching
               ) : mediaTypes[url] ? (
                 <img src={url} alt={`Slide ${index + 1}`} />
               ) : (
@@ -74,3 +88,11 @@ const ImageSlider = () => {
 };
 
 export default ImageSlider;
+
+
+
+
+
+
+
+// Default values shown
