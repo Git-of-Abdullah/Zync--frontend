@@ -1,0 +1,80 @@
+.chat-page {
+    display: flex;
+    height: 100vh;
+}
+
+.chat-sidebar {
+    width: 300px;
+    border-right: 1px solid #ddd;
+    padding: 10px;
+    overflow-y: auto;
+}
+
+.chat-main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid red; */
+}
+
+/* Increase width of the parent container */
+.str-chat__message-simple__actions {
+    min-width: 80px !important; /* Adjust as needed */
+    display: flex !important;
+    justify-content: flex-start;
+    align-items: flex-start;
+    /* border: 1px solid red; */
+    gap: 0px;
+}
+
+/* Increase the size of SVG icons */
+.str-chat__message-action-icon {
+    width: 20px !important; /* Increase width */
+    height: 20px !important; /* Increase height */
+    transform: scale(2.0); /* Scale up */
+    /* border: 1px solid blue; */
+}
+
+.str-chat__message-bubble {
+    height: 50px !important;
+}
+
+.str-chat__message--me .str-chat__message-text p {
+    font-size: 16px !important; /* Adjust font size */
+    line-height: 1.5 !important;
+    /* border: 1px solid red; */
+    transform: translateY(1px) !important;
+}
+
+.str-chat__message--me .str-chat__message-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.str-chat__message-reactions{
+    /* border: 1px solid red !important; */
+    color: black;
+    height: 40px !important;
+    width: 60px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+.str-chat__message-reaction-own{
+    height: 100% !important;
+    /* border: 1px solid blue !important; */
+    width: 80% !important;
+    background-color: rgb(240, 255, 255) !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+.str-chat__message-reaction-count{
+    color: black !important;
+    transform: translateY(-13px) !important;
+}
+.str-chat__message-reaction-emoji{
+    transform: translateY(-13px) !important;
+}

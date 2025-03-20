@@ -10,6 +10,7 @@ import { Feed } from './components/Feed/Feed'
 import { Create } from './components/Create/Create'
 import { Profile } from './components/Profile/Profile'
 import { ThemeContext } from './components/ThemeContext/ThemeContext'
+import ChatPage from './components/ChatPage/ChatPage'
 
 function App() {
   
@@ -34,6 +35,7 @@ function App() {
       </Route>
       <Route path='/profile' element={<Profile/>}>
       </Route>
+      <Route path='/chat' element={<ChatPage/>}></Route>
  
     </Routes>
     </>
