@@ -26,7 +26,7 @@ export const ChatProvider = ({ children, user }) => {
             if (data.status !== "success") throw new Error("Failed to get Stream Chat token");
 
             await chatClient.connectUser(
-                { id: user._id, name: user.name },
+                { id: user._id, name: user.name, image: user.profilePic },
                 data.token
             );
 

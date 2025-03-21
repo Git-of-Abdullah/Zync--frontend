@@ -1,0 +1,42 @@
+.user-item{
+    /* border: 1px solid red; */
+    margin-top: 3px;
+    background-color: rgba(245, 245, 245, 0.85);
+    transition: all 0.5s ease;
+}
+.user-item:hover{
+    background-color: #cbd7e9;
+}
+
+.user-list{
+    max-height: 400px;
+    overflow-y: auto;
+    box-shadow: rgb(161, 161, 161) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+border: none;
+border-radius: 8px;
+background-color: #E3E6EB;
+min-height: 200px;
+}
+.search-bar {
+    width: 100%;
+    padding: 10px 12px;
+    margin-bottom: 12px;
+    border: 1px solid #4a607d; /* Softer blue-gray border */
+    border-radius: 8px;
+    font-size: 14px;
+    background: #2A3B4F; /* Lighter blueish background */
+    color: #ffffff;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .search-bar::placeholder {
+    color: #b0bccb; /* Light grayish-blue text */
+  }
+  
+  .search-bar:focus {
+    border-color: #7fa1d6; /* Brighter blue focus */
+    background: #233144; /* Slightly darker focus */
+    box-shadow: 0 0 8px rgba(127, 161, 214, 0.5); /* Soft glow */
+  }
+  

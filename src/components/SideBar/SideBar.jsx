@@ -34,7 +34,7 @@ export const SideBar = () => {
                 <p className="link-name">Explore</p>
             </NavLink>
 
-            <NavLink to="/message" className={({ isActive }) => isActive ? "link active" : "link"}> 
+            <NavLink to="/inbox" className={({ isActive }) => isActive ? "link active" : "link"}> 
                 <img src={message} alt="" />
                 <p className="link-name">Message</p>
             </NavLink>

@@ -35,7 +35,7 @@ function App() {
       </Route>
       <Route path='/profile' element={<Profile/>}>
       </Route>
-      <Route path='/chat' element={<ChatPage/>}></Route>
+      <Route path='/inbox' element={<ChatPage/>}></Route>
  
     </Routes>
     </>

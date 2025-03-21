@@ -8,6 +8,7 @@
     border-right: 1px solid #ddd;
     padding: 10px;
     overflow-y: auto;
+    background-color:  #E3E6EB;
 }
 
 .chat-main {
@@ -37,6 +38,7 @@
 
 .str-chat__message-bubble {
     height: 50px !important;
+    background-color: #0078FF !important;
 }
 
 .str-chat__message--me .str-chat__message-text p {
@@ -44,6 +46,7 @@
     line-height: 1.5 !important;
     /* border: 1px solid red; */
     transform: translateY(1px) !important;
+    color: #ffffff
 }
 
 .str-chat__message--me .str-chat__message-text {
@@ -65,16 +68,88 @@
     height: 100% !important;
     /* border: 1px solid blue !important; */
     width: 80% !important;
-    background-color: rgb(240, 255, 255) !important;
+    background-color: #0077ff56 !important;
     border-radius: 50% !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
 }
+.str-chat__message-reaction{
+    background-color: #0077ff56 !important;
+    border-radius: 50% !important;
+    height: 100% !important;
+}
+
+.str-chat__message-reactions{
+    border-radius: 50%;
+    height: auto;
+}
 .str-chat__message-reaction-count{
-    color: black !important;
+    color: rgb(255, 255, 255) !important;
     transform: translateY(-13px) !important;
+    font-size: 14px;
 }
 .str-chat__message-reaction-emoji{
     transform: translateY(-13px) !important;
+}
+
+.str-chat__channel-preview-messenger--last-message{
+    font-size: 14px !important;
+    color: gray;
+}
+
+
+
+.user-list {
+    padding: 10px;
+    border-bottom: 1px solid #333;
+    border: 1px solid red;
+  }
+  
+  .user-item {
+    display: flex;
+    align-items: center;
+    /* border: 1px solid red; */
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .user-item:hover {
+    background: #444;
+  }
+  
+  .user-avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  .str-chat__avatar .str-chat__avatar-image{
+    background: none !important;
+  }
+  .str-chat__channel-list-messenger__main{
+    background-color:  #E3E6EB !important;
+  }
+  .str-chat__list{
+    background-color: #F1F3F6 !important;
+  }
+  .chat-heading{
+    color: #7e7e7e;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #8fbbfd;
+  }
+
+/* Received Messages (Other User's messages) */
+.str-chat__message {
+    background-color: #E4E6EB !important; /* Light Gray */
+    color: #222831 !important; /* Dark Gray Text */
+    border-radius: 12px 12px 12px 0px;
+    padding: 8px 12px;
+}
+.str-chat__message-text-inner p{
+    color: white;
+    font-size: 15px;
 }

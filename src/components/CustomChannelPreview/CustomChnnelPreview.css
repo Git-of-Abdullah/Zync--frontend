@@ -1,0 +1,114 @@
+.channel-preview {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 4px 8px;
+    /* border: 1px solid red; */
+    height: 70px;
+    cursor: pointer;
+    border-bottom: 1px solid #e0e0e0;
+    transition: background 0.3s ease-in-out;
+    border-radius: 8px;
+    background-color: rgba(245, 245, 245, 0.85); /* Softer light gray */
+    bo
+}
+
+/* Hover Effect */
+.channel-preview:hover {
+    background-color: #cbd7e9; /* Slightly darker gray */
+}
+
+/* Profile Picture */
+.channel-avatar {
+    width: 35px;
+    height: 35px;
+    border: 2px solid #bdbdbd; /* Soft border instead of red */
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 12px;
+}
+
+/* Channel Info Container */
+.channel-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    /* gap: 2px; */
+    /* border: 1px solid black; */
+    height: auto;
+    transform: translateY(-2px);
+}
+
+/* Channel Name */
+.channel-name {
+    font-weight: bold;
+    color: #222831; /* Darker text for readability */
+    font-size: 15px;
+    margin-bottom: 2px;
+}
+
+/* Last Message Preview */
+.last-message {
+    font-size: 0.9rem;
+    color: #616161; /* Softer muted gray */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 220px;
+    transform: translateY(-10px);
+}
+
+/* Unread Message Styling */
+.channel-preview.unread .last-message {
+    font-weight: bold;
+    color: #D32F2F; /* Red color for unread messages */
+}
+
+/* Timestamp */
+.timestamp {
+    font-size: 12px;
+    color: #757575;
+    margin-left: auto;
+}
+
+
+.channel-preview.active-channel {
+    background-color: #87CEEB; /* Light blue for active chat */
+    font-weight: bold;
+}
+/* Unread Message Styling */
+/* Unread Channel Styling */
+.channel-preview.unread {
+    background: linear-gradient(90deg, #e8f0fe, #d0e2ff); /* Elegant blue gradient */
+    font-weight: bold;
+    border-left: 4px solid #3b82f6; /* Stylish blue accent */
+    padding-left: 12px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+/* Unread Message Text */
+.channel-preview.unread .last-message {
+    font-weight: bold;
+    color: #ff3b30; /* Premium red for emphasis */
+}
+
+/* Unread Message Count Badge */
+.unread-count {
+    font-weight: bold;
+    color: white;
+    background: #ff3b30; /* Apple-style red */
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    min-width: 22px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(255, 59, 48, 0.3); /* Soft glow effect */
+    margin-left: auto;
+    transform: translateY(-2px);
+}
+
+/* Hover Effect for Unread Channels */
+.channel-preview.unread:hover {
+    background: linear-gradient(90deg, #dce6fc, #b9d0ff);
+    transform: scale(1.02);
+}
