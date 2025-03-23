@@ -7,6 +7,7 @@ import { ThemeProvider } from "./components/ThemeContext/ThemeContext.jsx"; // â
 import { ChatProvider } from "./components/ChatProvider/ChatProvider.jsx"; // âœ… Use your ChatProvider
 import { jwtDecode } from "jwt-decode";
 import axios from "axios";
+import "animate.css"
 
 const fetchUserProfile = async () => {
   try {

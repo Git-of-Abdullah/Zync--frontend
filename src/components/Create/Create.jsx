@@ -90,7 +90,7 @@ export const Create = () => {
       
 
   return (
-    <div className={`create-main ${theme === 'dark' ? "dark" : " "}`}>
+    <div className={`animate__animated animate__slideInLeft create-main ${theme === 'dark' ? "dark" : " "}`}>
     <h1 className="create-head"> Create a post </h1>
     <div className="create-sub">
         <div className="pfp-caption">

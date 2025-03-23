@@ -23,7 +23,7 @@ export const SideBar = () => {
         </div>
 
     <div className="nav-links">
-             <NavLink to="/home"   className={({ isActive }) => isActive ? "link active" : "link"}> 
+             <NavLink to="/home"   className={({ isActive }) => isActive ? "link l1 active" : "link l1"}> 
  
                 <img src={home} alt="" />
                 <p className="link-name">Feed</p>
@@ -46,12 +46,12 @@ export const SideBar = () => {
 
             
 
-            <NavLink to="/create" className={({ isActive }) => isActive ? "link active" : "link"}> 
+            <NavLink to="/create" className={({ isActive }) => isActive ? "link l3 active" : "link l3"}> 
                 <img src={create} alt="" />
                 <p className="link-name">Create</p>
             </NavLink>
 
-            <NavLink to="/settings" className={({ isActive }) => isActive ? "link active" : "link"}> 
+            <NavLink to="/settings" className={({ isActive }) => isActive ? "link l4 active" : "link l4"}> 
                 <img src={setting} alt="" />
                 <p className="link-name">Settings</p>
             </NavLink>

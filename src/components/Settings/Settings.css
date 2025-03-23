@@ -22,10 +22,22 @@
 .settings-pfp{
     width: 134px;
     height: 134px;
+    overflow: hidden;
     /* border: 1px solid black; */
     border-radius: 50%;
     transition: all 0.5s ease;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    /* border: 1px solid red; */
+}
+.settings-pfp-img{
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
 }
 .settings-pfp:hover{
     opacity: 0.2;
@@ -39,7 +51,7 @@
     position: relative;
 }
 .settings-input.i1{
-    margin-top: 50px;
+    margin-top: 30px;
 }
 
 .settings-input{
@@ -152,3 +164,63 @@ color: #030229;
 .pfp-upload{
     display: none;
 }
+
+
+/* Dark Mode Styles */
+.settings-main.dark .setting-sub-1 {
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+}
+
+.settings-main.dark .sett-label,
+.settings-main.dark .setting-filed {
+    color: #fff; /* White text */
+}
+
+.settings-main.dark .input-tag-wrapper {
+    background-color: #222; /* Dark gray input background */
+    border: 1px solid #444; /* Border for better visibility */
+}
+
+.settings-main.dark .setting-filed {
+    background-color: #222; /* Match input wrapper */
+    color: #fff; /* White text */
+}
+
+
+
+.settings-main.dark .update-profile {
+    background-color: #555; /* Darker shade for button */
+    color: #fff; /* White text */
+}
+
+.settings-main.dark .update-profile:hover {
+    background-color: #4163c9; /* Lighter shade on hover */
+}
+
+.settings-main.dark .update-profile:disabled {
+    background-color: #333; /* Gray out disabled button */
+}
+
+.settings-main.dark .pswd-link {
+    color: #ff5555; /* Red text for dark mode */
+}
+
+.settings-main.dark .pswd-link::after {
+    background-color: #ff5555; /* Red underline in dark mode */
+}
+
+.settings-main.dark .settings-sub{
+    background-color: #000;
+}
+
+
+
+  
+  .loader-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  

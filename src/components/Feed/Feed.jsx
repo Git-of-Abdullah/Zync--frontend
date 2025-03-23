@@ -44,7 +44,7 @@ export const Feed = () => {
   
   return (
     <>
-    <div className="main1">
+    <div className="animate__animated animate__slideInLeft main1">
         {  loading ? (<div className="post-shimmer"></div>) 
         :
         post.length === 0 ?(<p>No posts Available. Follow users To get Posts</p>) 
