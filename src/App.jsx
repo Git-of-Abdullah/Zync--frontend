@@ -11,8 +11,9 @@ import { Create } from './components/Create/Create'
 import { Profile } from './components/Profile/Profile'
 import { ThemeContext } from './components/ThemeContext/ThemeContext'
 import ChatPage from './components/ChatPage/ChatPage'
+import { Settings } from './components/Settings/Settings'
 
-function App() {
+function App({user}) {
   
 
   return (
@@ -36,6 +37,9 @@ function App() {
       <Route path='/profile' element={<Profile/>}>
       </Route>
       <Route path='/inbox' element={<ChatPage/>}></Route>
+      <Route path='/settings' element={<HomeLayout></HomeLayout>}>
+        <Route index element={<Settings user={user}/>}/>
+      </Route>
  
     </Routes>
     </>

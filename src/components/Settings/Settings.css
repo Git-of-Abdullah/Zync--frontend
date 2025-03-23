@@ -1,0 +1,154 @@
+.settings-main{
+    width: 96%;
+    height: 97%;
+    /* border: 1px solid red;   */
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+}
+
+.settings-sub{
+    width: 80%;
+    height: 100%;
+    /* border: 1px solid blue; */
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    
+    gap: 10px;
+}
+.settings-pfp{
+    width: 134px;
+    height: 134px;
+    /* border: 1px solid black; */
+    border-radius: 50%;
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+.settings-pfp:hover{
+    opacity: 0.2;
+}
+.setting-sub-1{
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid red; */
+    padding: 10px;
+    height: 100%;
+    position: relative;
+}
+.settings-input.i1{
+    margin-top: 50px;
+}
+
+.settings-input{
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    margin-top: 15px;
+}
+.sett-label{
+    font-family: "Nunito";
+font-weight: 600;
+font-size: 16px;
+line-height: 100%;
+letter-spacing: 0%;
+color: #030229;
+
+}
+.input-tag-wrapper{
+    /* border: 1px solid black; */
+    width: 50%;
+    background-color: #F5F5F5;
+    display: flex;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.setting-filed
+{
+    /* border: 1px solid red; */
+    height: 50px;
+    
+    width: 90%;
+    padding-left: 25px;
+    background-color: #F5F5F5;
+    outline: none;
+}
+.setting-filed{
+    font-family: "Nunito";
+font-weight: 600;
+font-size: 14px;
+line-height: 100%;
+letter-spacing: 0%;
+color: #030229;
+
+}
+.setting-edit-icon{
+    cursor: pointer;
+}
+.input-tag-wrapper.mail-i{
+    width: 60%;
+}
+
+.input-tag-wrapper.bio{
+    width: 90%;
+}
+.update-profile{
+    width: 159px;
+    height: 50px;
+    font-weight: 400;
+    font-size: 15px;
+    background-color: #4163c970;
+    position: absolute;
+    right: 9px;
+
+}
+.update-profile:hover{
+    background-color: #4163c9;
+
+}
+.update-profile:disabled {
+    background-color: #4163c970;  /* Light gray */
+    cursor: not-allowed;
+
+  }
+  
+
+  .pswd-link {
+    margin-top: 20px;
+    margin-left: 10px;
+    font-family: "Nunito";
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    /* border: 1px solid blue; */
+    width: 39%;
+    text-align: center;
+    color: red;
+    position: relative;
+    text-decoration: none; /* Remove default underline */
+    display: inline-block;
+}
+
+.pswd-link::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -2px; /* Adjust as needed */
+    width: 0;
+    height: 1px;
+    background-color: red;
+    transition: width 0.5s ease, left 0.5s ease;
+}
+
+.pswd-link:hover::after {
+    width: 100%;
+    left: 0;
+}
+.pfp-upload{
+    display: none;
+}

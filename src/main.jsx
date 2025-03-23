@@ -40,7 +40,7 @@ const fetchUserProfile = async () => {
         <BrowserRouter>
           {user ? (
             <ChatProvider user={user}>
-              <App />
+              <App user={user}/>
             </ChatProvider>
           ) : (
             <App />
