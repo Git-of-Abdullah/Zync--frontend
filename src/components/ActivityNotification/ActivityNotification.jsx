@@ -22,7 +22,7 @@ export const ActivityNotification = ({ sender, content }) => {
 
    return (
       <div className={`notification ${theme === "dark" ? "dark" : " "}`}>
-         <img src={sender.profilePic} alt="" />
+         <img className='noti-img' src={sender.profilePic} alt="" />
          <p>
             <b>{sender.name}</b> {content}
          </p>

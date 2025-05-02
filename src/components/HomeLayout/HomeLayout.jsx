@@ -8,13 +8,14 @@ import { useContext } from "react"
 import { ThemeContext } from "../ThemeContext/ThemeContext"
 
 
-export const HomeLayout = () => {
+export const HomeLayout = ({user}) => {
   const {theme} = useContext(ThemeContext)
   return (
     <>
+    
     <div className="bars">
         <SideBar/>
-        <Nav/>
+        <Nav user = {user}/>
     </div>
     <div className={`main-center ${theme === "dark" ? "dark" : ""}`}>
         <Outlet/> 

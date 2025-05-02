@@ -11,6 +11,7 @@ ring.register()
 // Default values shown
 
 export const Settings = ({ user }) => {
+  
   const [name, setName] = useState(user.name);
   const [mail, setMail] = useState(user.mail);
   const [bio, setBio] = useState(user.bio);

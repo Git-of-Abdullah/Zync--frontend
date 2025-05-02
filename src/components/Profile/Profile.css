@@ -141,3 +141,16 @@
   .bold-profile-att{
     font-weight: 500;
   }
+
+  .profile-bio{
+    font-size: 13px;
+    font-weight: 500;
+    padding: 10px;
+    opacity: 0.5;
+    font-family: "Poppins"
+  }
+  .unfollow-btn{
+    background-color: rgb(214, 214, 214);
+    border: 1px solid black;
+    color: black;
+  }

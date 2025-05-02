@@ -9,11 +9,16 @@
     align-items: center;
     padding: 7px;
 }
-.notification img{
+
+.noti-img{
     width: 33px;
     height: 33px;
     border-radius: 50%;
-    padding: 3px;
+    object-fit: contain;
+    background-color: #000000;
+    
+
+    /* border: 1px solid red; */
 }
 
 .notification p{
@@ -24,9 +29,12 @@
     transform: translateY(-4px);
 }
 .notification .follow-icon{
-    width: 25px;
-    height: 25px;
+    width: 15px;
+    height: 15px;
     cursor: pointer;
+
+    transform: translateX(-5px);
+
 }
 
 .notification.dark{
@@ -36,3 +44,4 @@
 .notification.dark p{
  color: #F8F8F8;
 }
+

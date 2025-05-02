@@ -2,17 +2,20 @@ import { useContext } from "react"
 import { Search } from "../SearchBar/Search"
 import "./Nav.css"
 import { ThemeContext } from "../ThemeContext/ThemeContext"
+import { NavLink } from "react-router-dom"
 
 
-export const Nav = () => {
+export const Nav = ({user}) => {
 
   const {theme} = useContext(ThemeContext)
   return (
     <div className={`nav-main ${theme === "dark" ? "dark" : " "}`}>
         <Search />
+        
         <div className="user-section">
-            <p className="username">Kat_Ab</p>
-            <img className="userImg" src="https://res.cloudinary.com/dxdsrmlcd/image/upload/v1738067039/default_profile_uj539l.png" alt="" />
+            <p className="username">{user.name}</p>
+            <NavLink to={`/profile/${user._id}`}><img className="userImg" src={user.profilePic} alt="" /></NavLink>
+            
         </div>
     </div>
   )

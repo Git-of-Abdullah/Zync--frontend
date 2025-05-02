@@ -9,15 +9,16 @@ import 'ldrs/ring'
 import { squircle } from 'ldrs'
 import { ThemeContext } from "../ThemeContext/ThemeContext";
 
-const mediaUrls = [
-  "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0", // Image 1
-  "https://www.w3schools.com/html/mov_bbb.mp4", // Video 1
-  "https://images.unsplash.com/photo-1521747116042-5a810fda9664", // Image 2
-  "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4", // Video 2
-  "https://images.unsplash.com/photo-1519682337058-a94d519337bc", // Image 3
-];
+// const mediaUrls = [
+//   "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0", // Image 1
+//   "https://www.w3schools.com/html/mov_bbb.mp4", // Video 1
+//   "https://images.unsplash.com/photo-1521747116042-5a810fda9664", // Image 2
+//   "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4", // Video 2
+//   "https://images.unsplash.com/photo-1519682337058-a94d519337bc", // Image 3
+// ];
 
-const ImageSlider = () => {
+const ImageSlider = ({data}) => {
+  const mediaUrls = data;
   const {theme} = useContext(ThemeContext)
   const [currentSlide, setCurrentSlide] = useState(1);
   const [mediaTypes, setMediaTypes] = useState({}); // Stores whether a URL is an image

@@ -11,11 +11,14 @@ import axios from "axios"
 import {jwtDecode} from "jwt-decode"
 import ImageSlider from "../ImageSlider/ImageSlider"
 import { ThemeContext } from "../ThemeContext/ThemeContext"
+import { NavLink } from "react-router-dom"
 
 
-export const Post = ({data, openComments}) => {
+export const Post = ({data, openComments, currentUser}) => {
     const token = localStorage.getItem("token")
     const id = jwtDecode(token).id
+
+    console.log(data)
 
 
     const [comment, setComment] = useState("");
@@ -80,8 +83,11 @@ export const Post = ({data, openComments}) => {
   return (
     <>
     <div className={`post-main ${theme === 'dark' ? "dark" : " "}`}>
+
         <div className="user-section">
-            <img src="https://res.cloudinary.com/dxdsrmlcd/image/upload/v1738067039/default_profile_uj539l.png" alt="" className="user-pfp" />
+            <NavLink to={`/profile/${data.user._id}`}>
+            <img src={data.user.profilePic} alt="" className="user-pfp" />
+            </NavLink>
             <div className="name-location">
                 <p className="name">{data.user.name}</p>
                 <p className="location">{data.location}</p>
@@ -92,7 +98,7 @@ export const Post = ({data, openComments}) => {
             {data.content}
         </p>
         <div className="post-img">
-        <ImageSlider/>
+        <ImageSlider data = {data.media}/>
         </div>
           
         <div className="likes-comments">
@@ -109,7 +115,7 @@ export const Post = ({data, openComments}) => {
                 </div>
         </div>
         <div className="comment">
-                <img src="https://res.cloudinary.com/dxdsrmlcd/image/upload/v1738067039/default_profile_uj539l.png" alt="" className="user-img" />
+                <img src={currentUser?.profilePic} alt="" className="user-img" />
                 <div className="comment-temp">
                 <textarea className="comment-text" placeholder="Write a comment.." value={comment} onChange = {(e) => setComment(e.target.value)}></textarea>
                 <img 

@@ -14,14 +14,16 @@ const fetchUserProfile = async () => {
     const token = localStorage.getItem("token");
     if (!token) return null; // No token, no user
 
-    const response = await axios.get(`${import.meta.env.VITE_AUTH_URL}/getProfile`, {
+    const {id} = jwtDecode(token)
+
+    const response = await axios.get(`${import.meta.env.VITE_AUTH_URL}/getProfile/${id}`, {
       headers: {
         authorization: `bearer ${token}`, // 
       },
     });
 
     const tmpres = response.data
-    console.log(tmpres.status)
+    // console.log(tmpres.data)
     if (tmpres.status === "successfull") {
       return tmpres.data.user;
     }

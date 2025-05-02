@@ -12,13 +12,14 @@ import { Profile } from './components/Profile/Profile'
 import { ThemeContext } from './components/ThemeContext/ThemeContext'
 import ChatPage from './components/ChatPage/ChatPage'
 import { Settings } from './components/Settings/Settings'
+import { Post } from './components/Post/Post'
 
 function App({user}) {
   
 
   return (
     <>
-
+      {/* {console.log(user)} */}
        <Routes>
       <Route path='/auth' element= {<AuthLayout/>}>
             <Route index element= {<SignUp/>}></Route>
@@ -27,20 +28,22 @@ function App({user}) {
           {/*-----------------------Reset password route------------------- */}
             <Route path='resetPassword/:token' element={<ResetPassword/>}></Route>      
       </Route>
-      <Route path='/home' element={<HomeLayout/>}>
-        <Route index element= {<Feed/>}></Route>
+      <Route path='/home' element={<HomeLayout user = {user}/>}>
+        <Route index element= {<Feed currentUser = {user}/>}></Route>
       </Route>
       {/*Create Page*/}
-      <Route path='/create' element={<HomeLayout/>}>
+      <Route path='/create' element={<HomeLayout user = {user} />}>
         <Route index element= {<Create/>}></Route>
       </Route>
-      <Route path='/profile' element={<Profile/>}>
+      <Route path='/profile/:id' element={<Profile/>}>
       </Route>
       <Route path='/inbox' element={<ChatPage/>}></Route>
-      <Route path='/settings' element={<HomeLayout></HomeLayout>}>
+      <Route path='/settings' element={<HomeLayout user = {user}></HomeLayout>}>
         <Route index element={<Settings user={user}/>}/>
       </Route>
- 
+      <Route path='/post/:id' element={<HomeLayout user={user}></HomeLayout>}>
+        <Route index element={<Feed></Feed>}></Route>
+      </Route>
     </Routes>
     </>
   )

@@ -26,9 +26,11 @@
 
 .user-pfp
 {
-    width: 40px;
-    height: 40px;
+    width: 40px; /* or your desired size */
+  height: 40px; /* make it square */
     border-radius: 50%;
+  object-fit: contain;  /* 👈 ensures the image fits without stretching */
+  background-color: black; 
 }
 .user-section{
     display: flex;
@@ -146,6 +148,8 @@
     width: 33px;
     height: 33px; 
     border-radius: 50%;
+    object-fit: contain;
+    background-color: #000000;
 
 }
 .comment-temp{

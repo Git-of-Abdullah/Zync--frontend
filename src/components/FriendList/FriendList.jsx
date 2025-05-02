@@ -27,7 +27,7 @@ export const FriendList = () => {
   
         const tempdata = res.data;
         setData(tempdata.data.followers)
-        console.log(tempdata.data.followers)
+        // console.log(tempdata.data.followers)
         setLoading(false)
       }catch(error)
       {

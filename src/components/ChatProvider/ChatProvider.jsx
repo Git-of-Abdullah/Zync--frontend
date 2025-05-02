@@ -12,7 +12,7 @@ export const ChatProvider = ({ children, user }) => {
         if (!user || !user._id) return;
 
         try {
-            console.log(`${import.meta.env.VITE_AUTH_URL}/getStreamToken`)
+            
             const response = await fetch(`${import.meta.env.VITE_AUTH_URL}/getStreamToken`, {
                 method: "GET",
                 credentials: "include",
@@ -22,7 +22,7 @@ export const ChatProvider = ({ children, user }) => {
             });
             
             const data = await response.json();
-            console.log("Stream Token Response:", data);  
+            // console.log("Stream Token Response:", data);  
             if (data.status !== "success") throw new Error("Failed to get Stream Chat token");
 
             await chatClient.connectUser(
