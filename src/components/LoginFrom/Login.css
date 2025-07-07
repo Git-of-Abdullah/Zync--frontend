@@ -52,8 +52,11 @@ p{
     color: #9E9B9B;
     margin-top: 10px;
 }
-.link{
+.auth-sign-link{
     color: #136ABB;
+}
+.forgot-link{
+    transform: translateY(10px);
 }
 
 

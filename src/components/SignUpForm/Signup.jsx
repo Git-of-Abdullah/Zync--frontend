@@ -59,7 +59,7 @@ export const SignUp = () => {
 
     <button type="submit" > Sign up</button>
     {error && <p className="error">{error}</p>}
-    <p>Already have an Account? <Link className="link" to="login">Login</Link> </p>
+    <p>Already have an Account? <Link className="auth-sign-link" to="login">Login</Link> </p>
     </form>
     </>
   )

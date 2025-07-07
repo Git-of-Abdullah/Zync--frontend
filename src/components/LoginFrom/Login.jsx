@@ -47,7 +47,7 @@ export const Login = () => {
     <input className="login-input" type="password" placeholder="Password" minLength="8" required value={password} onChange={(e) => setPassword(e.target.value)}/>
     <button type="submit" > Log in</button>
     {error && <p className="error">{error}</p>}
-     <Link className="link" to="/auth/forgotPassword">Forgot Password</Link> 
+     <Link className="auth-sign-link forgot-link" to="/auth/forgotPassword">Forgot Password</Link> 
     </form>
     </>
   )

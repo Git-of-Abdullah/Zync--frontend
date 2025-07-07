@@ -50,13 +50,20 @@ button:hover
 
 }
 
-p{
+.log-in-link{
     font-size: 13px;
     color: #9E9B9B;
     margin-top: 10px;
+    border: 1px solid red;
+    
+    
+    
 }
-.link{
+.auth-sign-link{
     color: #136ABB;
+    position: relative;
+    transform: translateY(-10px);
+    /* border: 1px solid red; */
 }
 
 
