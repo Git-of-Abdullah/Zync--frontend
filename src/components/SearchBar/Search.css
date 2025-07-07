@@ -1,49 +1,97 @@
-.search
-{
-    height: 46%;
-    width: 45%;
+/* Wrapper for search input + results */
+.search-wrapper {
+    position: absolute;
+    top: 20px;        /* Adjust this value to position your search bar vertically */
+    left: 30%;      /* Keep this consistent with your existing .search translateX */
+    width: 40%;
+    z-index: 2000;
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid red; */
+    gap: 8px;         /* space between search input and results */
+  }
+  
+  /* Search bar */
+  .search {
+    width: 100%;      /* full width of wrapper */
+    height: 40px;     /* adjusted height */
     background-color: #EFEFF0;
     border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0px 15px;
+    padding: 0 15px;
     overflow: hidden;
-    transform: translateX(150px);
-
-}
-
-.search.dark{
+    position: relative;  /* changed from absolute, now wrapper handles positioning */
+    /* border: 2px solid red; */
+    box-sizing: border-box;
+    z-index: 2001;       /* higher than results for safety */
+  }
+  
+  /* Dark theme for search bar */
+  .search.dark {
     background-color: #4E4E4E;
-}
-
-.search.dark .search-text{
-    color: #E3E3E3;
-}
-.search-text{
+  }
+  
+  /* Search input inside the search bar */
+  .search-text {
     color: #6B7280;
     font-family: "Poppins", serif;
     font-size: 13px;
-    height: 100px;
-    width: 50%;
+    height: 100%;
+    width: 90%;
     border: none;
-    /* border: 1px solid red; */
-    position: relative;
-    padding-left: 2px;
-    
-
-}
-.search.dark .search-text{
+    padding-left: 8px;
+    box-sizing: border-box;
+    background: transparent;
+  }
+  
+  .search.dark .search-text {
     color: #E3E3E3;
-}
-.search-text:focus
-{
+  }
+  
+  .search-text:focus {
     outline: none;
-}
-
-.searchIcon{
+  }
+  
+  /* Search icon on the right */
+  .searchIcon {
     width: 17px;
     height: 17px;
     cursor: pointer;
-    /* border: 1px solid red; */
-}
+  }
+  
+  /* Results container */
+  .search-results {
+    width: 100%; /* match wrapper width */
+    background-color: #EFEFF0;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+    z-index: 2000;
+    box-sizing: border-box;
+  }
+  
+  /* Show results - expand height and scroll if too tall */
+  .search-results.show {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+  
+  /* Paragraph style inside results (e.g., "No users found") */
+  .search-results p {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    font-size: 13px;
+    color: #444;
+  }
+  
+  /* Dark theme for results container */
+  .search-wrapper.dark .search-results {
+    background-color: #4E4E4E;
+    color: #E3E3E3;
+  }
+  

@@ -12,7 +12,7 @@ export const Nav = ({user}) => {
     <div className={`nav-main ${theme === "dark" ? "dark" : " "}`}>
         <Search />
         
-        <div className="user-section">
+        <div className="user-section-nav">
             <p className="username">{user.name}</p>
             <NavLink to={`/profile/${user._id}`}><img className="userImg" src={user.profilePic} alt="" /></NavLink>
             
