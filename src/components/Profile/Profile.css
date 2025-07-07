@@ -156,3 +156,11 @@
     border: 1px solid black;
     color: black;
   }
+
+  /*Dark theme*/
+.profile-hero.dark .profile-username,
+.profile-hero.dark .profile-bio,
+.profile-hero.dark .info-counts p,
+.profile-hero.dark .bold-profile-att {
+  color: white;
+}

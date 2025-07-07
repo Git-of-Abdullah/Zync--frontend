@@ -13,6 +13,7 @@ import { ThemeContext } from './components/ThemeContext/ThemeContext'
 import ChatPage from './components/ChatPage/ChatPage'
 import { Settings } from './components/Settings/Settings'
 import { Post } from './components/Post/Post'
+import { Index } from './components/IndexPage/Index'
 
 function App({user}) {
   
@@ -21,6 +22,7 @@ function App({user}) {
     <>
       {/* {console.log(user)} */}
        <Routes>
+      <Route path='/' element={<Index/>}/>
       <Route path='/auth' element= {<AuthLayout/>}>
             <Route index element= {<SignUp/>}></Route>
             <Route path='login' element={<Login/>}></Route>

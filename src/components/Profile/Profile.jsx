@@ -3,10 +3,11 @@ import "./Profile.css";
 import img1 from "../../assets/images/-2059466.jpg"
 import img2 from "../../assets/images/clouds-cloudy-countryside-236047 (2).jpg"
 import { useNavigate, useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
 import { jwtDecode } from "jwt-decode";
+import { ThemeContext } from "../ThemeContext/ThemeContext";
 
 export const Profile = () => {
   const {id} = useParams();
@@ -21,7 +22,7 @@ export const Profile = () => {
 
   const isSameUser = jwtDecode(token).id === id ? true : false
   const loggedInUserId = jwtDecode(token).id;
-
+  const {theme} = useContext(ThemeContext)
 
   //data fetching
   useEffect(()=>
@@ -115,7 +116,7 @@ export const Profile = () => {
 
   return (
     
-    <div className="profile-hero">
+    <div className={`profile-hero  ${theme === 'dark' ? "dark" : " "}`}>
       {/* {console.log(data)}
     {  console.log(user)}
     {console.log(post)} */}
