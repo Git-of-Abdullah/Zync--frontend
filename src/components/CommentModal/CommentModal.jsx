@@ -11,7 +11,7 @@ import {jwtDecode} from "jwt-decode"
 import { ThemeContext } from "../ThemeContext/ThemeContext";
 
 
-export const CommentModal = ({post, onClose}) => {
+export const CommentModal = ({pfp,post, onClose}) => {
     const token = localStorage.getItem("token")
     const [data, setData] = useState([])
     const [comment, setComment] = useState("");
@@ -93,7 +93,7 @@ const handleEmojiClick = (emojiData) => {
                 }
             </div>
             <div className="comment">
-                <img src="https://res.cloudinary.com/dxdsrmlcd/image/upload/v1738067039/default_profile_uj539l.png" alt="" className="user-img" />
+                <img src={pfp} alt="" className="user-img" />
                 <div className="comment-temp">
                 <textarea className="comment-text" placeholder="Write a comment.." value={comment} onChange = {(e) => setComment(e.target.value)}></textarea>
                 <img 

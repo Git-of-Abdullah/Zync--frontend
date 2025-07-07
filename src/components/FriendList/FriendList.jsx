@@ -50,7 +50,7 @@ export const FriendList = () => {
           data.length === 0 ? (<p style={{margin: "auto", fontSize: "12px" }}>No Followers</p>) 
         :
           data.map((user) => {
-            return <User key={user._id}  name={user.name} pfp = {user.profilePic}/>
+            return <User key={user._id} id={user._id} name={user.name} pfp = {user.profilePic}/>
           })}
             
         </div>

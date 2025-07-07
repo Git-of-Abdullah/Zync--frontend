@@ -102,7 +102,7 @@ export const Feed = ({currentUser}) => {
 
     </div>
     {showComments && (
-      <CommentModal post={selectedPost} onClose={() => setShowComments(false)} />
+      <CommentModal pfp={currentUser?.profilePic} post={selectedPost} onClose={() => setShowComments(false)} />
     )}
     </>
   )

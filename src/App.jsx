@@ -42,7 +42,7 @@ function App({user}) {
         <Route index element={<Settings user={user}/>}/>
       </Route>
       <Route path='/post/:id' element={<HomeLayout user={user}></HomeLayout>}>
-        <Route index element={<Feed></Feed>}></Route>
+        <Route index element={<Feed currentUser={user}></Feed>}></Route>
       </Route>
     </Routes>
     </>
