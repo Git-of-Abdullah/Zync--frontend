@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import ChatBubble from "./ChatBubble";
 import { useState } from "react";
 import { Link, useParams } from "react-router-dom";
@@ -23,8 +23,13 @@ export const Chat_right = () => {
   const [messages, setMessages] = useState([])
   const decoded = jwtDecode(token)
   const currentUserId = decoded.id
+  const messagesEndRef = useRef(null)
   
-
+useEffect(() => {
+    if (messagesEndRef.current) {
+      messagesEndRef.current.scrollTop = messagesEndRef.current.scrollHeight;
+    }
+  }, [messages]);
 
 
 
@@ -51,11 +56,11 @@ export const Chat_right = () => {
     return () => clearTimeout(timer);
   }, [id]);
 
-  //useEffect to recieve Message
-  useEffect(() => {
+// useEffect to receive real-time messages
+useEffect(() => {
   socket.on("recieveMessage", (message) => {
     setMessages((prev) => [...prev, message]);
-    console.log("Message Recieved: ", message.text)
+    console.log("Message Recieved: ", message.text);
   });
 
   return () => {
@@ -63,6 +68,24 @@ export const Chat_right = () => {
   };
 }, []);
 
+// useEffect to load history when chat opens
+useEffect(() => {
+  const fetchOldMessages = async () => {
+    try {
+      const url = `${import.meta.env.VITE_AUTH_URL}/chat/${id}`;
+      const res = await axios.get(url, {
+        headers: {
+          authorization: `bearer ${token}`
+        }
+      });
+      setMessages(res.data.messages);
+    } catch (error) {
+      console.error("Error fetching chat history:", error);
+    }
+  };
+
+  fetchOldMessages();
+}, [id, token]);
 
 
 
@@ -103,7 +126,7 @@ export const Chat_right = () => {
         <p className="font-semibold !text-[16px]">{data?.name}</p>
       </Link>
 
-      <div className="messages flex flex-col gap-3 !mt-[60px] !p-4 overflow-y-auto">
+      <div className="messages border  flex flex-col gap-3 !my-[60px] h-[500px] w-full  !p-4 overflow-y-auto" ref={messagesEndRef}>
         {messages?.map((msg) => {
           return <ChatBubble key={msg.senderId} message={msg.text} isSender={msg.sender === currentUserId}/>
         })}
