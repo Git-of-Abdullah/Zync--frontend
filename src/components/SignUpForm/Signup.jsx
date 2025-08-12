@@ -35,7 +35,7 @@ export const SignUp = () => {
               console.log(res.data.token)
               localStorage.setItem('token',res.data.token)
               alert("account created Successfully")
-              return navigate("/feed")
+              return navigate("/home")
             }
          
         } catch(err)

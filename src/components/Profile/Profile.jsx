@@ -1,16 +1,13 @@
 import { SideBar } from "../SideBar/SideBar";
 import "./Profile.css";
-import img1 from "../../assets/images/-2059466.jpg"
-import img2 from "../../assets/images/clouds-cloudy-countryside-236047 (2).jpg"
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams, NavLink } from "react-router-dom";
 import { useState, useEffect, useContext } from "react";
 import axios from "axios";
-import { NavLink } from "react-router-dom";
 import { jwtDecode } from "jwt-decode";
 import { ThemeContext } from "../ThemeContext/ThemeContext";
 
 export const Profile = () => {
-  const {id} = useParams();
+  const { id } = useParams();
   const [data, setData] = useState();
   const [loading, setLoading] = useState();
   const [user, setUser] = useState();
@@ -20,106 +17,95 @@ export const Profile = () => {
 
   const token = localStorage.getItem("token");
 
-  const isSameUser = jwtDecode(token).id === id ? true : false
+  const isSameUser = jwtDecode(token).id === id;
   const loggedInUserId = jwtDecode(token).id;
-  const {theme} = useContext(ThemeContext)
+  const { theme } = useContext(ThemeContext);
 
-  //data fetching
-  useEffect(()=>
-    {
-      const getData =async() =>{
-  
-        const url = `${import.meta.env.VITE_AUTH_URL}/getProfile/${id}`
-        try{
-          const res = await axios.get(url, {
-            headers: {
-              authorization: `bearer ${token}`
-            },
-          });
-          // console.log("hello")
-          const tempdata = res.data;
-          setData(tempdata.data)
-          setIsFollowing(tempdata.data.user.followers.includes(loggedInUserId));
-          setUser(tempdata.data.user)
-          setPost(tempdata.data.posts)
+  // Data fetching
+  useEffect(() => {
+    const getData = async () => {
+      const url = `${import.meta.env.VITE_AUTH_URL}/getProfile/${id}`;
+      try {
+        const res = await axios.get(url, {
+          headers: {
+            authorization: `bearer ${token}`,
+          },
+        });
 
-          // console.log(tempdata.data.user.profilePic)
-          setLoading(false)
-        }catch(error)
-        {
-          console.log(error.response)
-          setLoading(false)
-        }
-        
-      }; getData();
-    },[token,id])
-
-    //function for setting click
-
-    const handleSettingsClick = () =>
-      {
-        navigate("/settings");
+        const tempdata = res.data;
+        setData(tempdata.data);
+        setIsFollowing(tempdata.data.user.followers.includes(loggedInUserId));
+        setUser(tempdata.data.user);
+        setPost(tempdata.data.posts);
+        setLoading(false);
+      } catch (error) {
+        console.log(error.response);
+        setLoading(false);
       }
+    };
+    getData();
+  }, [token, id]);
 
-// FOLLOW USER
-      const handleFollowClick = async () => {
-        try {
-          const url = `${import.meta.env.VITE_AUTH_URL}/follow/${id}`;
-          const res = await axios.post(
-            url,
-            {},
-            {
-              headers: {
-                authorization: `bearer ${token}`,
-              },
-            }
-          );
+  const handleSettingsClick = () => {
+    navigate("/settings");
+  };
 
-          // Update followers count in UI
-          setUser((prevUser) => ({
-            ...prevUser,
-            followers: [...prevUser.followers, jwtDecode(token).id],
-          }));
-
-          setIsFollowing(true);
-        } catch (err) {
-          console.error("Error while following:", err.response || err);
+  const handleFollowClick = async () => {
+    try {
+      const url = `${import.meta.env.VITE_AUTH_URL}/follow/${id}`;
+      await axios.post(
+        url,
+        {},
+        {
+          headers: {
+            authorization: `bearer ${token}`,
+          },
         }
-      };
+      );
 
-      // UNFOLLOW USER
-      const handleUnfollowClick = async () => {
-        try {
-          const url = `${import.meta.env.VITE_AUTH_URL}/unfollow/${id}`;
-          const res = await axios.post(
-            url,
-            {},
-            {
-              headers: {
-                authorization: `bearer ${token}`,
-              },
-            }
-          );
+      setUser((prevUser) => ({
+        ...prevUser,
+        followers: [...prevUser.followers, loggedInUserId],
+      }));
 
-          // Update followers count in UI
-          setUser((prevUser) => ({
-            ...prevUser,
-            followers: prevUser.followers.filter((followerId) => followerId !== jwtDecode(token).id),
-          }));
+      setIsFollowing(true);
+    } catch (err) {
+      console.error("Error while following:", err.response || err);
+    }
+  };
 
-          setIsFollowing(false);
-        } catch (err) {
-          console.error("Error while unfollowing:", err.response || err);
+  const handleUnfollowClick = async () => {
+    try {
+      const url = `${import.meta.env.VITE_AUTH_URL}/unfollow/${id}`;
+      await axios.post(
+        url,
+        {},
+        {
+          headers: {
+            authorization: `bearer ${token}`,
+          },
         }
-      };
-  
+      );
+
+      setUser((prevUser) => ({
+        ...prevUser,
+        followers: prevUser.followers.filter(
+          (followerId) => followerId !== loggedInUserId
+        ),
+      }));
+
+      setIsFollowing(false);
+    } catch (err) {
+      console.error("Error while unfollowing:", err.response || err);
+    }
+  };
+
+  const handleChatClick = () => {
+    navigate(`/chat/${id}`);
+  };
 
   return (
-    
-    <div className={`profile-hero  ${theme === 'dark' ? "dark" : " "}`}>
-      {/* {console.log(data)}
-    {  console.log(user)}
-    {console.log(post)} */}
+    <div className={`profile-hero ${theme === "dark" ? "dark" : ""}`}>
       <SideBar />
       <div className="profile-main">
         <div className="profile-main1">
@@ -130,12 +116,7 @@ export const Profile = () => {
             />
           </div>
           <div className="profile-info">
-            
-            <img
-              src={user?.profilePic}
-              alt=""
-              className="profile-pfp"
-            />
+            <img src={user?.profilePic} alt="" className="profile-pfp" />
             <h1 className="profile-username">{user?.name}</h1>
             <h1 className="profile-bio">{user?.bio}</h1>
             <div className="info-counts">
@@ -152,20 +133,54 @@ export const Profile = () => {
                 <p className="bold-profile-att">Following</p>
               </div>
             </div>
-            { isSameUser? <button className="profile-follow-btn" onClick={handleSettingsClick}>Settings</button> :
-            isFollowing? <button className="profile-follow-btn unfollow-btn" onClick={handleUnfollowClick}>Unfollow</button> :
-            <button className="profile-follow-btn" onClick={handleFollowClick}>Follow</button>}
-            
+
+            {isSameUser ? (
+              <button
+                className="profile-follow-btn"
+                onClick={handleSettingsClick}
+              >
+                Settings
+              </button>
+            ) : (
+              <>
+                {isFollowing ? (
+                  <button
+                    className="profile-follow-btn unfollow-btn"
+                    onClick={handleUnfollowClick}
+                  >
+                    Unfollow
+                  </button>
+                ) : (
+                  <button
+                    className="profile-follow-btn"
+                    onClick={handleFollowClick}
+                  >
+                    Follow
+                  </button>
+                )}
+
+                {/* Chat button with Tailwind styling */}
+                <button
+                  onClick={handleChatClick}
+                  className="ml-3 px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white text-sm font-medium rounded-lg shadow-sm transition-colors duration-200"
+                >
+                  Chat
+                </button>
+              </>
+            )}
           </div>
         </div>
-        <div className="profile-main2">
-        {post?.map((post, index) => (
-  <NavLink to={`/post/${post._id}`} className="profile-main-temp" key={post._id || index}>
-    <img src={post.media[0]} alt="" />   
-  </NavLink>
-))}
 
-            
+        <div className="profile-main2">
+          {post?.map((post, index) => (
+            <NavLink
+              to={`/post/${post._id}`}
+              className="profile-main-temp"
+              key={post._id || index}
+            >
+              <img src={post.media[0]} alt="" />
+            </NavLink>
+          ))}
         </div>
       </div>
     </div>

@@ -14,6 +14,8 @@ import ChatPage from './components/ChatPage/ChatPage'
 import { Settings } from './components/Settings/Settings'
 import { Post } from './components/Post/Post'
 import { Index } from './components/IndexPage/Index'
+import { Chat_main } from './components/Chat-io/Chat_main'
+import { Chat_right } from './components/Chat-io/Chat_right'
 
 function App({user}) {
   
@@ -23,6 +25,9 @@ function App({user}) {
       {/* {console.log(user)} */}
        <Routes>
       <Route path='/' element={<Index/>}/>
+      <Route path='/chat/:id' element={<Chat_right/>}>
+        
+      </Route>
       <Route path='/auth' element= {<AuthLayout/>}>
             <Route index element= {<SignUp/>}></Route>
             <Route path='login' element={<Login/>}></Route>
