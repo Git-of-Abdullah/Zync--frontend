@@ -9,8 +9,8 @@ export const ActivityNotification = ({ sender, content }) => {
    const [like, setLike] = useState(false);
    const [follow, setFollow] = useState(false);
    const {theme} = useContext(ThemeContext)
-   console.log("=======================sender=====================")
-   console.log(sender)
+   
+  
    useEffect(() => {
       // Run effect only when content changes
       if (content.includes("liked")) {

@@ -96,4 +96,4 @@ export default ImageSlider;
 
 
 
-// Default values shown
+
