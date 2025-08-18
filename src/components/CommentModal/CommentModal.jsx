@@ -116,6 +116,6 @@ const handleEmojiClick = (emojiData) => {
         </div>
           </div>
         </div>,
-        document.getElementById("modal-root") // ✅ Render outside `.main-center`
+        document.getElementById("modal-root") 
       );
 }

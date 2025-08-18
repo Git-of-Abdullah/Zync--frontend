@@ -30,10 +30,7 @@ export const SideBar = () => {
             </NavLink>
 
 
-            <NavLink to="/inbox" className={({ isActive }) => isActive ? "link active" : "link"}> 
-                <img src={message} alt="" />
-                <p className="link-name">Message</p>
-            </NavLink>
+        
 
             <NavLink to="#" onClick={toggleTheme} className="themebutton">
                  <img src={mode} alt="" />

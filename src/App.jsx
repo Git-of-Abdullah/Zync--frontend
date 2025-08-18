@@ -44,7 +44,6 @@ function App({user}) {
       </Route>
       <Route path='/profile/:id' element={<Profile/>}>
       </Route>
-      <Route path='/inbox' element={<ChatPage/>}></Route>
       <Route path='/settings' element={<HomeLayout user = {user}></HomeLayout>}>
         <Route index element={<Settings user={user}/>}/>
       </Route>

@@ -6,6 +6,12 @@ import axios from "axios";
 import { jwtDecode } from "jwt-decode";
 import { ThemeContext } from "../ThemeContext/ThemeContext";
 
+import io from "socket.io-client";
+
+
+
+
+ 
 export const Profile = () => {
   const { id } = useParams();
   const [data, setData] = useState();
@@ -20,6 +26,9 @@ export const Profile = () => {
   const isSameUser = jwtDecode(token).id === id;
   const loggedInUserId = jwtDecode(token).id;
   const { theme } = useContext(ThemeContext);
+
+ 
+
 
   // Data fetching
   useEffect(() => {
@@ -46,12 +55,35 @@ export const Profile = () => {
     getData();
   }, [token, id]);
 
-  const handleSettingsClick = () => {
-    navigate("/settings");
-  };
+  // const handleSettingsClick = () => {
+  //   navigate("/settings");
+  // };
 
   const handleFollowClick = async () => {
+
     try {
+      if(!isFollowing)
+      {
+        setIsFollowing(true);
+        setUser((prevUser) => ({
+        ...prevUser,
+        followers: [...prevUser.followers, loggedInUserId],
+      }));
+
+      
+      }
+      else{
+        setIsFollowing(false);
+        
+        setUser((prevUser) => ({
+        ...prevUser,
+        followers: prevUser.followers.filter(
+          (followerId) => followerId !== loggedInUserId
+        ),
+      }));
+
+      
+      }
       const url = `${import.meta.env.VITE_AUTH_URL}/follow/${id}`;
       await axios.post(
         url,
@@ -62,13 +94,8 @@ export const Profile = () => {
           },
         }
       );
-
-      setUser((prevUser) => ({
-        ...prevUser,
-        followers: [...prevUser.followers, loggedInUserId],
-      }));
-
-      setIsFollowing(true);
+      
+      
     } catch (err) {
       console.error("Error while following:", err.response || err);
     }
@@ -76,7 +103,7 @@ export const Profile = () => {
 
   const handleUnfollowClick = async () => {
     try {
-      const url = `${import.meta.env.VITE_AUTH_URL}/unfollow/${id}`;
+      const url = `${import.meta.env.VITE_AUTH_URL}/follow/${id}`;
       await axios.post(
         url,
         {},
@@ -143,26 +170,19 @@ export const Profile = () => {
               </button>
             ) : (
               <>
-                {isFollowing ? (
-                  <button
-                    className="profile-follow-btn unfollow-btn"
-                    onClick={handleUnfollowClick}
-                  >
-                    Unfollow
-                  </button>
-                ) : (
+                
                   <button
                     className="profile-follow-btn"
                     onClick={handleFollowClick}
                   >
-                    Follow
+                    {`${isFollowing ? "UnFollow" : "Follow"}`}
                   </button>
-                )}
+                
 
                 {/* Chat button with Tailwind styling */}
                 <button
                   onClick={handleChatClick}
-                  className="ml-3 px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white text-sm font-medium rounded-lg shadow-sm transition-colors duration-200"
+                  className="ml-3 px-4 !w-[30%] !text-md py-2 bg-white  hover:bg-blue-600 text-black !border   font-medium rounded-lg shadow-sm transition-colors duration-200 hover:bg-blue-600 hover:text-white"
                 >
                   Chat
                 </button>

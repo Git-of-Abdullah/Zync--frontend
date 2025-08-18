@@ -16,8 +16,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 export const Post = ({ data, openComments, currentUser }) => {
   const token = localStorage.getItem("token");
   const id = jwtDecode(token).id;
-  console.log(data)
-  console.log(currentUser)
+  
 
   const [comment, setComment] = useState("");
   const [commentCount, setCommentCount] = useState(data.comments.length);
@@ -34,10 +33,10 @@ export const Post = ({ data, openComments, currentUser }) => {
     setLikeCount((prev) =>
       prev !== undefined ? (isLiked ? prev - 1 : prev + 1) : 0
     );
-    console.log(likeCount);
+    
     try {
       const url = `${import.meta.env.VITE_POST_URL}/${data._id}/like`;
-      console.log(url);
+     
       const res = await axios.get(url, {
         headers: {
           authorization: `bearer ${token}`,

@@ -38,6 +38,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 30px !important;
     /* padding-left: 40px; */
 
     margin-top: 50px;

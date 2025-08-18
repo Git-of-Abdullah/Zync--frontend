@@ -73,7 +73,7 @@ export const Feed = ({currentUser}) => {
   return (
     
     <>
-    {console.log(postSingle)}
+   
     <div className="animate__animated animate__slideInLeft main1">
     {loading ? (
   <div className="post-shimmer"></div>

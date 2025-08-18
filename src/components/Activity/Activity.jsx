@@ -4,7 +4,12 @@ import "./Activity.css"
 import axios from "axios";
 import { useContext } from "react";
 import { ThemeContext } from "../ThemeContext/ThemeContext";
+import { io } from "socket.io-client";
+const notificationAudio = new Audio("../../../public/notification-sound-effect-372475.mp3");
 
+const socket = io("http://localhost:8000", {
+    auth:{token : localStorage.getItem("token")}
+})
 
 export const Activity = () => {
    const [data, setData] = useState([]);
@@ -12,6 +17,21 @@ export const Activity = () => {
    const {theme} = useContext(ThemeContext)
 
    const token = localStorage.getItem("token")
+
+
+   useEffect(() => {
+  // Listen once when Profile mounts
+  socket.on("recieveNotification", (newNoti) => {
+    console.log("📩 New notification:", newNoti);
+     setData((prev) => [newNoti, ...prev]);
+     notificationAudio.play().catch((e) => console.log("Audio play error:", e));
+  });
+
+  // Cleanup on unmount
+  return () => {
+    socket.off("recieveNotification");
+  };
+}, []);
 
    useEffect(() => {
     const getNotifications = async() => 
